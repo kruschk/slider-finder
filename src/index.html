@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width; user-scalable=yes" />
+        <title>Slider Finder</title>
+    </head>
+    <body>
+        <h1>Slider Finder</h1>
+        <p>This tool is designed to help you find the ideal setting for any option that can be adjusted to a numerical value within a specified range. It was originally developed to help find the ideal mouse sensitivity for video games, but it can be used in other applications as well, such as finding the perfect bass level for a song. The tool uses a simple binary search algorithm to help you find the best setting as quickly as possible. All you need to do is provide lower and upper bounds, then decide whether each suggestion is too low or too high. You will very quickly find the setting that feels just right to you!</p>
+        <p>To use the tool, simply follow these instructions, using the inputs in the "Controls" field:</p>
+        <ol>
+            <li>Enter the upper and lower bounds of the range.</li>
+            <li>Click "Begin".</li>
+            <li>Try the setting suggested by the tool.</li>
+            <li>Decide if the suggestion is too low or too high. If it's too low, click "Higher", and if it's too high, click "Lower". If you feel like you've made a mistake, you can also "Go back" so you don't need to restart from the beginning.</li>
+            <li>Repeat steps 3 and 4 until you're happy with the setting or until finer adjustment is no longer possible.</li>
+        </ol>
+        <p>There is also a "Reset" button available to clear the tool and start over.</p>
+        <form id="slider-finder">
+            <fieldset>
+                <legend>Controls</legend>
+                <div class="interactive-container">
+                    <label class="interactive" for="lbound">Lower bound: </label>
+                    <input autofocus class="interactive" id="lbound" name="lbound" placeholder="0.0" required step="0.1" type="number" />
+                    <label class="interactive" for="ubound">Upper bound: </label>
+                    <input class="interactive" id="ubound" name="ubound" placeholder="1.0" required step="0.1" type="number" />
+
+                    <input class="interactive" id="begin" name="begin" type="submit" value="Begin" />
+                    <input class="interactive" disabled id="reset" name="reset" type="reset" value="Reset" />
+                    <button class="interactive" disabled id="lower" type="button">Lower</button>
+                    <button class="interactive" disabled id="higher" type="button">Higher</button>
+                    <button class="interactive" disabled id="go-back" type="button">Go back</button>
+                </div>
+            </fieldset>
+        </form>
+        <div id="suggestions">
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
